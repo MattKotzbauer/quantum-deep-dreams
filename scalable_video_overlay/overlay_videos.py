@@ -1,21 +1,18 @@
 # Import moviepy editor library, which gives us the editing functions
 from moviepy.editor import *
 
+sample_dict = [{0: 0.89, 1: 0.94, 2: 0.92, 3: 0.33, 4: 0.01, 5: 0.24, 6: 0.12, 7: 0.04}]
+
 # Function to read the file of opacity inputs
 def read_input():
     # Defining and array of the opacity levels for each clip
     opacities = []
-    file = open("inputs.txt")
-    # Reads the content of the file
-    contents = file.readlines()
     # Iterates through file inputs
-    for i in range(len(contents)):
+    for i in range(len(sample_dict[0])):
         # Parses the input format and stores in variable
-        placeholder = contents[i].rstrip()
-        # Adds the float value to the list of opacity levels
-        opacities.append(float(placeholder))
-    # Closes the file once it's been read
-    file.close()
+        placeholder = sample_dict[0][i]
+        # Appends list of video opacities with appropriate float
+        opacities.append(placeholder)
     # Finally, returns our array of opacities
     return opacities
 
